@@ -7,3 +7,6 @@
     command: docker build -t cicd-project-ansible .
     args:
       chdir: /root
+
+  - name: create a container using cicd-project-ansible
+    command: docker run -d --name my_cicd_project -p 8081:8080 cicd-project-ansible
