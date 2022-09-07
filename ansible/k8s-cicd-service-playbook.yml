@@ -1,0 +1,8 @@
+- name: create service for deployment
+  hosts: kubernetes
+  #become: true
+  #user: ubuntu
+
+  tasks:
+  - name: create a service
+    command: /usr/local/bin/minikube kubectl -- apply -f /root/cicd-devops-service.yml

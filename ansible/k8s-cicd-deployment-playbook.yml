@@ -6,4 +6,4 @@
 
   tasks:
   - name: create a deployment
-    command: minikube kubectl -- apply -f cicd-devops-deployment.yml
+    command: /usr/local/bin/minikube kubectl -- apply -f /root/cicd-devops-deployment.yml
