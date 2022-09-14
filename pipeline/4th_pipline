@@ -14,5 +14,10 @@ pipeline{
                     mvn clean compile package -DskipTests=true
                 '''
         }
+        stage('deploy'){
+            steps{
+                deploy adapters: [tomcat9(credentialsId: 'deployer_user', path: '', url: '')], contextPath: null, war: '**/*.war'
+            }
+        }
     }
 }
