@@ -5,5 +5,9 @@
   # user: ubuntu
 
   tasks:
+  - name: delete the previous deployment 
+    command: /usr/local/bin/minikube kubectl -- delete deployment.apps/cicd-deployment
+    ignore_errors: yes
+
   - name: create a deployment
     command: /usr/local/bin/minikube kubectl -- apply -f /root/cicd-devops-deployment.yml
